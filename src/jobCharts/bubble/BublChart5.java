@@ -1,34 +1,32 @@
-package jobCharts;
+package jobCharts.bubble;
 /**
  * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
  * All rights reserved. Use is subject to license terms.
  */
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
-import javafx.scene.chart.*;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.BubbleChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.util.StringConverter;
-import javafx.util.converter.NumberStringConverter;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-import java.util.Locale;
 
 /**
  * A chart that plots bubbles for a series of data points. Bubbles are plotted
@@ -40,7 +38,7 @@ import java.util.Locale;
  * @see javafx.scene.chart.Axis
  * @see javafx.scene.chart.NumberAxis
  */
-public class BublChart extends Application {
+public class BublChart5 extends Application {
 //jfxrt.jar!/com/sun/javafx/scene/control/skin/caspian/caspian.css
     private void init(Stage primaryStage) {
         AnchorPane root = new AnchorPane();
@@ -51,20 +49,20 @@ public class BublChart extends Application {
 
         ObservableList<BubbleChart.Series> bubbleChartData = FXCollections.observableArrayList(
                 new BubbleChart.Series("Series 1", FXCollections.observableArrayList(
-                        new XYChart.Data(  100d / 6300d *   186.31d   ,    100d /157d *   -0.08   ,    5d / 12.41d *  16.1d),
-                        new XYChart.Data(  100d / 6300d *   657.78d   ,    100d /157d *   1.58d   ,    5d / 12.41d *  12.54d),
-                        new XYChart.Data(  100d / 6300d *   2125.97d  ,    100d /157d *   5.64d   ,    5d / 12.41d *  12.41d),
-                        new XYChart.Data(  100d / 6300d *   1640.19d  ,    100d /157d *  28.53d   ,    5d / 12.41d *  11.79d),
-                        new XYChart.Data(  100d / 6300d *   1593.25d  ,    100d /157d *  13.82d   ,    5d / 12.41d *  10.92d),
-                        new XYChart.Data(  100d / 6300d *   1777.86d  ,    100d /157d *  -2.29d   ,    5d / 12.41d *  9.1d),
-                        new XYChart.Data(  100d / 6300d *   1706.35d  ,    100d /157d *  51.37d   ,    5d / 12.41d *  5.17d),
-                        new XYChart.Data(  100d / 6300d *   2259.37d  ,    100d /157d *  41.28d   ,    5d / 12.41d *  5.05d),
-                        new XYChart.Data(  100d / 6300d *   1255.56d  ,    100d /157d *  -2.07d   ,    5d / 12.41d *  4.86d),
-                        new XYChart.Data(  100d / 6300d *   2002.53d  ,    100d /157d *  67.59d   ,    5d / 12.41d *  3.29d),
-                        new XYChart.Data(  100d / 6300d *   2662.94d  ,    100d /157d *  79.67d   ,    5d / 12.41d *  3.23d),
-                        new XYChart.Data(  100d / 6300d *   1201.93d  ,    100d /157d *  38.26d   ,    5d / 12.41d *  2.25d),
-                        new XYChart.Data(  100d / 6300d *   675.86d   ,    100d /157d *  37.61d   ,    5d / 12.41d *  2.22d),
-                        new XYChart.Data(  100d / 6300d *   2599.15d  ,    100d /157d *  -3.17d   ,    5d / 12.41d *  1.07d)))
+                        new XYChart.Data(  100d / 6300d *   3095.6d   ,    100d /157d *   65.33d   ,    5d / 12.41d *  16.6d),
+                        new XYChart.Data(  100d / 6300d *   3080.5d   ,    100d /157d *   97.55d   ,    5d / 12.41d *  10.74d),
+                        new XYChart.Data(  100d / 6300d *   2637.92d  ,    100d /157d *   42.50d   ,    5d / 12.41d *  10.21d),
+                        new XYChart.Data(  100d / 6300d *   2673.47d  ,    100d /157d *   80.03d   ,    5d / 12.41d *  9.08d),
+                        new XYChart.Data(  100d / 6300d *   2370.54d  ,    100d /157d *   42.33d   ,    5d / 12.41d *  8.41d),
+                        new XYChart.Data(  100d / 6300d *   2366.63d  ,    100d /157d *   -0.71d   ,    5d / 12.41d *  8.22d),
+                        new XYChart.Data(  100d / 6300d *   3493.38d  ,    100d /157d *   83.49d   ,    5d / 12.41d *  8.04d),
+                        new XYChart.Data(  100d / 6300d *   1691.17d  ,    100d /157d *   -1.86d   ,    5d / 12.41d *  7.0d),
+                        new XYChart.Data(  100d / 6300d *   3039.13d  ,    100d /157d *   2.29d   ,     5d / 12.41d *  5.63d),
+                        new XYChart.Data(  100d / 6300d *   2419.39d  ,    100d /157d *   112.95d   ,   5d / 12.41d *  3.87d),
+                        new XYChart.Data(  100d / 6300d *   3347.79d  ,    100d /157d *   129.86d   ,   5d / 12.41d *  3.35d),
+                        new XYChart.Data(  100d / 6300d *   1934.34d  ,    100d /157d *   40.17d   ,    5d / 12.41d *  3.25d),
+                        new XYChart.Data(  100d / 6300d *   1801.04d   ,   100d /157d *   81.45d   ,    5d / 12.41d *  2.88d),
+                        new XYChart.Data(  100d / 6300d *   735.41d  ,     100d /157d *  -5.42d   ,     5d / 12.41d *  2.74d)))
         );
 
 
@@ -132,11 +130,19 @@ public class BublChart extends Application {
             public void handle(ActionEvent event) {
                 WritableImage image = primaryStage.getScene().snapshot(null);
                 FileChooser fileChooser = new FileChooser();
+                fileChooser.setInitialFileName(getClass().getName());
+
+                String currentDir = System.getProperty("user.home") + "/Desktop";
+                File file = new File(currentDir);
+                fileChooser.setInitialDirectory(file);
+                fileChooser.setInitialFileName(getClass().getName());
+
+
                 fileChooser.setTitle("Save diagram as png file. . .");
                 fileChooser.getExtensionFilters().addAll(
                         new FileChooser.ExtensionFilter("PNG", "*.png")
                 );
-                File file = fileChooser.showSaveDialog(primaryStage);
+                file = fileChooser.showSaveDialog(primaryStage);
                 if (file != null) {
                     try {
                         ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
@@ -165,6 +171,7 @@ public class BublChart extends Application {
         primaryStage.show();
         primaryStage.setWidth(800);
         primaryStage.setHeight(600);
+        primaryStage.setTitle("Artemis MW 150");
 
     }
 

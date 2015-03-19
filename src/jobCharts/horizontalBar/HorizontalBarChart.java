@@ -1,4 +1,4 @@
-package jobCharts;
+package jobCharts.horizontalBar;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -19,40 +19,43 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import jobCharts.ExportToPng;
 
 import java.util.Arrays;
 
 
-public class HorizontalBarChart2 extends Application {
+public class HorizontalBarChart extends Application {
     String[] years=new String[]{
 
+            "DK",
+            "UK",
             "SE",
+            "FR",
+            "HU",
+            "MT",
+            "IT",
+            "IE",
             "EE",
             "SK",
-            "PL",
-            "UK",
-            "LV",
-            "DK",
-            "CZ",
-            "AT",
             "SI",
-            "IE",
+            "AT",
+            "PL",
             "DE",
-            "FR",
-            "MT",
-            "ES",
-            "FI",
-            "IT",
             "PT",
-            "LT",
+            "LV",
+            "CZ",
+            "ES",
             "BE",
-            "LU",
-            "CY",
+            "FI",
+            "LT",
             "NL",
-            "RO",
+            "LU",
             "GR",
-            "BG",
-            "HU",
+            "CY",
+            "RO",
+            "BG"
+
+
     };
 
     private void init(Stage primaryStage) {
@@ -107,11 +110,10 @@ public class HorizontalBarChart2 extends Application {
         xAxis.setStyle("-fx-font-size: 20;");
 
 
-
         XYChart.Series<Number,String> series1 = new XYChart.Series<Number,String>();
         yAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(years)));
 
-        series1.setName("Diesel");
+        series1.setName("Gasoline");
         loadData(series1);
 
 
@@ -125,33 +127,33 @@ public class HorizontalBarChart2 extends Application {
 
         double[] data=new double[]{
 
-                21.6,
-                23.5,
+                18.8,
+                19.2,
+                20.0,
+                20.0,
+                23.4,
+                23.6,
+                23.6,
+                24.0,
+                24.2,
+                25.1,
                 25.9,
-                26.0,
                 26.2,
-                26.6,
-                26.7,
+                27.5,
                 27.6,
+                28.0,
                 28.7,
-                29.6,
-                30.0,
-                30.6,
-                30.8,
-                30.9,
-                32.8,
-                33.9,
-                34.0,
-                35.2,
-                35.7,
-                38.4,
-                40.3,
-                41.5,
-                48.4,
-                49.2,
-                49.7,
-                53.2,
-                0,
+                30.2,
+                31.8,
+                33.8,
+                34.9,
+                35.1,
+                37.3,
+                40.0,
+                44.2,
+                45.4,
+                47.6,
+                54.3
 
 
         };

@@ -29,7 +29,8 @@
 }
 
 .chart-series-area-fill.series0.default-color0{
-  -fx-fill:#55555520;
+  /*-fx-fill:#55555520;*/
+  -fx-fill:transparent;
 }
 
 .default-color0.chart-series-area-line { -fx-stroke-width:3px }
@@ -46,3 +47,12 @@
 .chart{
 -fx-background:#ffffff;
 }
+
+.default-color0.chart-bar { -fx-fill: #346; -fx-width:100px; }
+
+
+.axis.{
+  -fx-tick-label-rotation:45;
+  -fx-rotate:45;
+}
+

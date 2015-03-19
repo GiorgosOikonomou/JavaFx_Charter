@@ -1,4 +1,4 @@
-package jobCharts;
+package jobCharts.horizontalBar;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -19,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import jobCharts.ExportToPng;
 
 import java.util.Arrays;
 

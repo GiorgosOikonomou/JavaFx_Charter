@@ -1,4 +1,4 @@
-package jobCharts;
+package jobCharts.horizontalBar;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -19,40 +19,41 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import jobCharts.ExportToPng;
 
 import java.util.Arrays;
 
 
-public class HorizontalBarChart extends Application {
+public class HorizontalBarChart3 extends Application {
     String[] years=new String[]{
 
-            "DK",
-            "UK",
             "SE",
-            "FR",
-            "HU",
-            "MT",
-            "IT",
-            "IE",
+            "UK",
             "EE",
+            "FR",
+            "DK",
+            "HU",
             "SK",
-            "SI",
-            "AT",
-            "PL",
-            "DE",
-            "PT",
             "LV",
+            "IT",
+            "SI",
+            "PL",
+            "AT",
+            "MT",
+            "DE",
+            "IE",
             "CZ",
+            "PT",
             "ES",
-            "BE",
             "FI",
+            "BE",
             "LT",
-            "NL",
             "LU",
-            "GR",
+            "NL",
             "CY",
             "RO",
-            "BG"
+            "GR",
+            "BG",
 
 
     };
@@ -96,7 +97,7 @@ public class HorizontalBarChart extends Application {
 
 
         yAxis.setLabel("Country");
-        xAxis.setLabel("CO2 emissions [g/km] difference");
+        xAxis.setLabel("CO2 emissions [g/km] % difference");
 
         yAxis.setTickLabelGap(10);
         yAxis.setTickLabelRotation(0);
@@ -126,33 +127,35 @@ public class HorizontalBarChart extends Application {
 
         double[] data=new double[]{
 
-                18.8,
+                13.7,
+                14.2,
+                15.6,
+                15.8,
+                15.8,
+                16.5,
+                17.8,
+                18.3,
+                18.6,
+                18.7,
                 19.2,
-                20.0,
-                20.0,
-                23.4,
-                23.6,
-                23.6,
-                24.0,
-                24.2,
-                25.1,
-                25.9,
-                26.2,
-                27.5,
-                27.6,
-                28.0,
-                28.7,
-                30.2,
-                31.8,
-                33.8,
-                34.9,
-                35.1,
-                37.3,
-                40.0,
-                44.2,
-                45.4,
-                47.6,
-                54.3
+                19.2,
+                19.3,
+                19.3,
+                19.5,
+                21.5,
+                22.3,
+                23.2,
+                24.8,
+                25.5,
+                25.6,
+                26.4,
+                29.2,
+                30.0,
+                33.1,
+                35.0,
+                36.2,
+
+
 
 
         };
